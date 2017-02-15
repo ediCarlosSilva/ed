@@ -18,7 +18,7 @@ public class TesteAdicionaNoFim {
 		lista.adiciona(a2);
 		
 		System.out.println(lista);
-		
+		System.out.println(a1.getNome());
 	}
 	
 }
