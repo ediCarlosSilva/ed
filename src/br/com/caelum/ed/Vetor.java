@@ -1,7 +1,5 @@
 package br.com.caelum.ed;
 
-import java.util.Arrays;
-
 public class Vetor {
 
 	// Declarando e inicializando um array de Aluno com capacidade 100
@@ -37,17 +35,41 @@ public class Vetor {
 	}
 	
 	public boolean contem (Aluno aluno) {
-		// implementação
-		return true;
+		for ( int i = 0; i < this.totalDeAlunos; i++) {
+//			if (aluno == this.alunos[i]) {
+//				return true;
+//			}
+			if (aluno.equals(this.alunos[i])) {
+				return true;
+			}
+			
+		}
+		return false;
 	}
 	
 	public int tamanho() {
-		// implementação
-		return 0;
+		return this.totalDeAlunos;
 	}
 	
 	public String toString() {
-		return Arrays.toString(alunos);
+//		return Arrays.toString(alunos);
+		
+		if (this.totalDeAlunos == 0 ) {
+			return "[]";
+		}
+		
+		StringBuilder builder = new StringBuilder();
+		builder.append("[");
+		
+		for ( int i = 0; i < this.totalDeAlunos - 1; i++ ) {
+			builder.append(this.alunos[i]);
+			builder.append(", ");
+		}
+		
+		builder.append(this.alunos[this.totalDeAlunos - 1]);
+		builder.append("]");
+	
+		return builder.toString();
 	}
 	
 }
