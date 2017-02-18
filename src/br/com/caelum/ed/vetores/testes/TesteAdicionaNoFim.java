@@ -1,7 +1,8 @@
 package br.com.caelum.ed.vetores.testes;
 
 import br.com.caelum.ed.vetores.Aluno;
-import br.com.caelum.ed.vetores.Vetor;
+import br.com.caelum.ed.vetores.exercicios.Vetor;
+
 
 public class TesteAdicionaNoFim {
 
