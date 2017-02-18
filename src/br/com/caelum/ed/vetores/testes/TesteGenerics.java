@@ -1,8 +1,8 @@
-package br.com.caelum.ed.teste;
+package br.com.caelum.ed.vetores.testes;
 
 import java.util.ArrayList;
 
-import br.com.caelum.ed.Aluno;
+import br.com.caelum.ed.vetores.Aluno;
 
 public class TesteGenerics {
 
