@@ -18,25 +18,71 @@ public class Vetor {
 //		}
 		
 		// segunda maneira. consumo de tempo constante
+		this.garantaEspaco();
 		this.alunos[this.totalDeAlunos] = aluno;
 		this.totalDeAlunos++;
 	}
 	
 	public void adiciona(int posicao, Aluno aluno) {
-		//implementação
+		this.garantaEspaco();
+		if (!this.posicaoValida(posicao)) {
+			throw new IllegalArgumentException("Posição inválida");
+		}
+		
+		for ( int i = this.totalDeAlunos -1; i >= posicao; i--) {
+			this.alunos[i + 1] = this.alunos[i];
+		}
+		
+		this.alunos[posicao] = aluno;
+		this.totalDeAlunos++;
+	}
+	
+	private boolean posicaoValida(int posicao) {
+		return posicao >= 0 && posicao <= this.totalDeAlunos;
 	}
 	
 	public Aluno pega(int posicao) {
-		// implementação
-		return null;
+		// primeira maneira
+//		return this.alunos[posicao];
+		
+		// segunda maneira
+		if (!this.posicaoOcupada(posicao)) {
+			throw new IllegalArgumentException("Posição inválida");
+		}
+		return this.alunos[posicao];
+		
+	}
+	
+	private boolean posicaoOcupada(int posicao) {
+		return posicao >= 0 && posicao < this.totalDeAlunos;
 	}
 	
 	public void remove (int posicao) {
-		// implementação
+		if (!this.posicaoOcupada(posicao)) {
+			throw new IllegalArgumentException("Posição inválida");
+		}
+		for (int i = posicao; i < this.totalDeAlunos - 1; i++) {
+			this.alunos[i] = this.alunos[i + 1];
+		}
+		this.totalDeAlunos--;
 	}
 	
 	public boolean contem ( Aluno aluno ) {
-		// implementação
+		// método contém. primeira maneira.
+//		for ( int i = 0; i < this.alunos.length; i++) {
+//			if (aluno == alunos[i]) {
+//				return true;
+//			}
+//		}
+//		return false;
+		
+		// método contém. segunda maneira.
+		for (int i = 0; i < this.totalDeAlunos; i++) {
+			if (aluno == this.alunos[i]) {
+				return true;
+			}
+			
+		}
 		return false;
 	}
 	
@@ -45,6 +91,7 @@ public class Vetor {
 	}
 	
 	public String toString() {
+
 		if (this.totalDeAlunos == 0) {
 			return "[]";
 		}
@@ -61,5 +108,15 @@ public class Vetor {
 		builder.append("]");
 		
 		return builder.toString();
+	}
+	
+	private void garantaEspaco() {
+		if (this.totalDeAlunos == this.alunos.length) {
+			Aluno[] novaArray = new Aluno[this.alunos.length * 2];
+			for ( int i = 0; i < this.alunos.length; i++) {
+				novaArray[i] = this.alunos[i];
+			}
+			this.alunos = novaArray;
+		}
 	}
 }
