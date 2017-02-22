@@ -4,8 +4,10 @@ public class TesteAdicioanaNoComeco {
 	public static void main(String[] args) {
 		ListaLigada lista = new ListaLigada();
 		
-		lista.adicionaNoComeco("Rafael");
-		lista.adicionaNoComeco("Paulo");
+		lista.adicionaNoComeco("PrimeiroAdicionado");
+		lista.adicionaNoComeco("SegundoAdicionado");
+		lista.adicionaNoComeco("TerceiroAdicionado");
+		lista.adicionaNoComeco("quardoAdicionado");
 		
 		System.out.println(lista);
 		
