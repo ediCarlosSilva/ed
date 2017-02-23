@@ -6,8 +6,17 @@ public class ListaLigada {
 	private Celula ultima;
 	private int totalDeElementos;
 	
+	// adiciona no fim
 	public void adiciona(Object elemento) {
-		
+		if (this.totalDeElementos == 0) {
+			this.adicionaNoComeco(elemento);
+		} else {
+			Celula nova = new Celula(elemento);
+			this.ultima.setProxima(nova);
+			nova.setAnterior(this.ultima);
+			this.ultima = nova;
+			this.totalDeElementos++;
+		}
 	}
 	
 	public void adiciona(int posicao, Object elemento) {

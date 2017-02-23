@@ -8,6 +8,7 @@ public class TesteAdicioanaNoComeco {
 		lista.adicionaNoComeco("SegundoAdicionado");
 		lista.adicionaNoComeco("TerceiroAdicionado");
 		lista.adicionaNoComeco("quardoAdicionado");
+		lista.adicionaNoComeco("QuintoAdicionado");
 		
 		System.out.println(lista);
 		
