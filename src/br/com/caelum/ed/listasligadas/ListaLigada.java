@@ -6,6 +6,22 @@ public class ListaLigada {
 	private Celula ultima;
 	private int totalDeElementos;
 	
+	private boolean posicaoOcupada(int posicao) {
+		return posicao >= 0 && posicao < this.totalDeElementos;
+	}
+	
+	private Celula pegaCelula(int posicao) {
+		if (!this.posicaoOcupada(posicao)) {
+			throw new IllegalArgumentException("Posição não exite");
+		}
+		
+		Celula atual = primeira;
+		for (int i = 0; i < posicao; i++) {
+			atual = atual.getProxima();
+		}
+		return atual;
+	}
+	
 	// adiciona no fim
 	public void adiciona(Object elemento) {
 		if (this.totalDeElementos == 0) {
@@ -19,8 +35,21 @@ public class ListaLigada {
 		}
 	}
 	
+	// adiciona em qualquer posição
 	public void adiciona(int posicao, Object elemento) {
-		
+		if (posicao == 0) { // No começo.
+			this.adicionaNoComeco(elemento);
+		} else if (posicao == this.totalDeElementos) { // No Fim
+			this.adiciona(elemento);
+		} else {
+			Celula anterior = this.pegaCelula(posicao - 1);
+			Celula proxima = anterior.getProxima();
+			Celula nova = new Celula(anterior.getProxima(), elemento);
+			nova.setAnterior(anterior);
+			anterior.setProxima(nova);
+			proxima.setAnterior(nova);
+			this.totalDeElementos++;
+		}
 	}
 	
 	public Object pega(int posicao) {
