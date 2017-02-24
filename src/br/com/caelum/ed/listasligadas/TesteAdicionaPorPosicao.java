@@ -4,9 +4,10 @@ public class TesteAdicionaPorPosicao {
 	public static void main(String[] args) {
 		ListaLigada lista = new ListaLigada();
 		lista.adiciona("primeiroAdicionado");
-		lista.adiciona(0, "SegundoadicionaPosicaoZero");
-		lista.adiciona(1, "TerceiroadicionaNaPosicaoUm");
+		lista.adiciona("SegundoAdicionado");
+		lista.adiciona("TerceiroAdicionado");
 		lista.adiciona("quartoAdicionado");
+		lista.adiciona(3, "quintoAdicionado");
 		
 		System.out.println(lista);
 		// saida esperada
