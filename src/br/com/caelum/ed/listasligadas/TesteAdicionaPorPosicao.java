@@ -5,10 +5,9 @@ public class TesteAdicionaPorPosicao {
 		ListaLigada lista = new ListaLigada();
 		lista.adiciona("primeiroAdicionado");
 		lista.adiciona("SegundoAdicionado");
-		lista.adiciona("TerceiroAdicionado");
-		lista.adiciona("quartoAdicionado");
-		lista.adiciona(3, "quintoAdicionado");
+		lista.adiciona(1, "TerceiroAdicionado");
 		
+				
 		System.out.println(lista);
 		// saida esperada
 		// [Paulo, Camila, Rafael]
