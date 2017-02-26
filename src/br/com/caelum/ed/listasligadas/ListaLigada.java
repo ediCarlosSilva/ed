@@ -98,6 +98,14 @@ public class ListaLigada {
 		if (!this.posicaoOcupada(this.totalDeElementos - 1)) {
 			throw new IllegalArgumentException("Posição não existe");
 		}
+		if (this.totalDeElementos == 1) {
+			this.removeDoComeco();
+		} else {
+			Celula penultima = this.ultima.getAnterior();
+			penultima.setProxima(null);
+			this.ultima = penultima;
+			this.totalDeElementos--;
+		}
 	}
 	
 	public String toString() {

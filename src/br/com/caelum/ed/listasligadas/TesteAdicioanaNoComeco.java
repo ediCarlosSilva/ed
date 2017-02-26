@@ -5,10 +5,7 @@ public class TesteAdicioanaNoComeco {
 		ListaLigada lista = new ListaLigada();
 		
 		lista.adicionaNoComeco("PrimeiroAdicionado");
-		lista.adicionaNoComeco("SegundoAdicionado");
-		lista.adicionaNoComeco("TerceiroAdicionado");
-		lista.adicionaNoComeco("quardoAdicionado");
-		lista.adicionaNoComeco("QuintoAdicionado");
+
 		
 		System.out.println(lista);
 		
