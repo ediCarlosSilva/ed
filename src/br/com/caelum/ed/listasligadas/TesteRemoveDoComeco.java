@@ -6,7 +6,7 @@ public class TesteRemoveDoComeco {
 		ListaLigada lista = new ListaLigada();
 		
 		lista.adiciona("Rafael");
-		lista.adiciona("Paulo");
+//		lista.adiciona("Paulo");
 		
 		lista.removeDoComeco();
 		
